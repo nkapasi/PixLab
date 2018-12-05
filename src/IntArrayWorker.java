@@ -27,6 +27,30 @@ public class IntArrayWorker {
 		return total;
 	}
 
+	//Get Largest Number of an Array
+	public int getLargest(){
+		int largest = 0;
+		for (int row = 0; row < matrix.length; row++){
+			for(int col = 0; col < matrix[0].length; col++){
+				if (matrix[row][col]>largest){
+					largest = matrix[row][col];
+				}
+			}
+
+		}
+		return largest;
+	}
+
+	//Get Column Total
+	public int getColTotal(int colNum){
+		int total = 0;
+
+		for(int row = 0; row < matrix.length; row++){
+			total = total + matrix[row][colNum];
+		}
+		return total;
+	}
+
 	/**
 	 * Method to return the total using a nested for-each loop
 	 * 
@@ -67,6 +91,18 @@ public class IntArrayWorker {
 			System.out.println();
 		}
 		System.out.println();
+	}
+
+	public int getCount(int scanner){
+		int count = 0;
+		for (int row = 0; row<matrix.length;row++){
+			for(int col = 0; col < matrix[row].length; col++){
+				if(matrix[row][col] == scanner){
+					count = count + 1;
+				}
+			}
+		}
+		return count;
 	}
 
 	/**
