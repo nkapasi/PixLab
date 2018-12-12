@@ -21,10 +21,13 @@ public class PictureTester
   public static void testMirrorVertical()
   {
     Picture caterpillar = new Picture("caterpillar.jpg");
+    System.out.println(caterpillar);
     caterpillar.explore();
-    caterpillar.mirrorVertical();
-    caterpillar.explore();
+    // caterpillar.mirrorVertical();
+    // caterpillar.explore();
   }
+
+
   public static void testNegate()
   {
     Picture beach = new Picture("beach.jpg");
@@ -88,8 +91,9 @@ public class PictureTester
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
-    testFixUnderwater();
-    //testMirrorVertical();
+    //testFixUnderwater();
+    testMirrorVertical();
+    //testMirrorVerticalRightToLeft();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
