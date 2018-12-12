@@ -21,12 +21,42 @@ public class PictureTester
   public static void testMirrorVertical()
   {
     Picture caterpillar = new Picture("caterpillar.jpg");
-    System.out.println(caterpillar);
     caterpillar.explore();
-    // caterpillar.mirrorVertical();
-    // caterpillar.explore();
+    caterpillar.mirrorVertical();
+    caterpillar.explore();
+  }
+  
+  public static void testMirrorVerticalRightToLeft()
+  {
+    Picture caterpillar = new Picture("caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorVerticalRighttoLeft();
+    caterpillar.explore();
   }
 
+  public static void testMirrorHorizontalBotToTop()
+  {
+    Picture caterpillar = new Picture("caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorHorizontalBotToTop();
+    caterpillar.explore();
+  }
+
+  public static void testMirrorDiagnol()
+  {
+    Picture caterpillar = new Picture("caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorDiagnol();
+    caterpillar.explore();
+  }
+
+  public static void testMirrorHorizontal()
+  {
+    Picture caterpillar = new Picture("caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorHorizontal();
+    caterpillar.explore();
+  }
 
   public static void testNegate()
   {
@@ -92,8 +122,11 @@ public class PictureTester
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
-    testMirrorVertical();
+    //testMirrorVertical();
     //testMirrorVerticalRightToLeft();
+    //testMirrorHorizontalBotToTop();
+    //testMirrorHorizontal();
+    testMirrorDiagnol();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
