@@ -75,6 +75,22 @@ public class PictureTester
     temple.mirrorTemple();
     temple.explore();
   }
+
+  public static void testMirrorArms()
+  {
+    Picture temple = new Picture("snowman.jpg");
+    temple.explore();
+    temple.mirrorArms();
+    temple.explore();
+  }
+
+  public static void testMirrorSeagull()
+  {
+    Picture temple = new Picture("seagull.jpg");
+    temple.explore();
+    temple.mirrorSeagull();
+    temple.explore();
+  }
   public static void testGrayscale()
   {
     Picture beach = new Picture("beach.jpg");
@@ -126,10 +142,10 @@ public class PictureTester
     //testMirrorVerticalRightToLeft();
     //testMirrorHorizontalBotToTop();
     //testMirrorHorizontal();
-    testMirrorDiagnol();
+    //testMirrorDiagnol();
     //testMirrorTemple();
     //testMirrorArms();
-    //testMirrorGull();
+    testMirrorSeagull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
