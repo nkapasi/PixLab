@@ -316,12 +316,46 @@ public class Picture extends SimplePicture {
 		}
 	}
 
+	public void copySlice(Picture fromPic, int startRow, int startCol, int endCol, int endRow) {
+		Pixel fromPixel = null;
+		Pixel toPixel = null;
+		Pixel[][] toPixels = this.getPixels2D();
+		Pixel[][] fromPixels = fromPic.getPixels2D();
+		for (int fromRow = 0, toRow = startRow; fromRow < endRow
+				&& toRow < toPixels.length; fromRow++, toRow++) {
+			for (int fromCol = 0, toCol = startCol; fromCol < endCol
+					&& toCol < toPixels[0].length; fromCol++, toCol++) {
+				fromPixel = fromPixels[fromRow][fromCol];
+				toPixel = toPixels[toRow][toCol];
+				toPixel.setColor(fromPixel.getColor());
+			}
+		}
+	}
+
+
 	/** Method to create a collage of several pictures */
 	public void createCollage() {
 		Picture flower1 = new Picture("flower1.jpg");
 		Picture flower2 = new Picture("flower2.jpg");
 		this.copy(flower1, 0, 0);
 		this.copy(flower2, 100, 0);
+		this.copy(flower1, 200, 0);
+		Picture flowerNoBlue = new Picture(flower2);
+		flowerNoBlue.zeroBlue();
+		this.copy(flowerNoBlue, 300, 0);
+		this.copy(flower1, 400, 0);
+		this.copy(flower2, 500, 0);
+		this.mirrorVertical();
+		this.write("collage.jpg");
+		System.out.println("x");
+	}
+
+	public void myCollage() {
+		Picture flower1 = new Picture("flower1.jpg");
+		Picture flower2 = new Picture("flower2.jpg");
+		this.copy.mirrorVertical();
+		this.copy
+		.negate();
 		this.copy(flower1, 200, 0);
 		Picture flowerNoBlue = new Picture(flower2);
 		flowerNoBlue.zeroBlue();
@@ -352,6 +386,18 @@ public class Picture extends SimplePicture {
 					leftPixel.setColor(Color.BLACK);
 				else
 					leftPixel.setColor(Color.WHITE);
+			}
+		}
+
+		for (int col = 0; col < pixels.length; col++) {
+			for (int row = 0; row < pixels[0].length - 1; row++) {
+				topPixel = pixels[row][col];
+				bottomPixel = pixels[row][col + 1];
+				bottomColor = bottomPixel.getColor();
+				if (topPixel.colorDistance(bottomColor) > edgeDist)
+					topPixel.setColor(Color.BLACK);
+				else
+					topPixel.setColor(Color.WHITE);
 			}
 		}
 	}
